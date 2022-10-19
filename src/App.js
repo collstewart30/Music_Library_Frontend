@@ -3,21 +3,19 @@ import axios from 'axios';
 
 function App() {
 
-  const [entries, setEntries] = useState([{title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'},]);
+  const [songs, setSongs] = useState([{title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'}]);
 
-  // const [song, setSongs] = useState([]);
+   useEffect(() =>{
+     getAllSongs();
+   }, []);
 
-  // useEffect(() =>{
-  //   getAllSongs();
-  // }, []);
-
-  // async function getAllSongs(){
-  //   const response = await axios.get('http://127.0.0.1:8000/api/music/');
-  //   console.log(response.data);
-  //   setSongs(response.data)
-  // }
-
-  {/* <button type='submit' onClick={() => getAllSongs()}>Get All Songs</button> */}
+   async function getAllSongs(){
+     const response = await axios.get('http://127.0.0.1:8000/api/music/');
+     console.log(response.data);
+     setSongs(response.data)
+  }
+  
+  // {<button type='submit' onClick={() => getAllSongs()}>Get All Songs</button>}
   return (
     <div>
       <table>
@@ -32,15 +30,15 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {entries.map((entry, index) => {
+          {songs.map((song,index) => {
             return (
               <tr>
                 <td>{index + 1}</td>
-                <td>{entry.title}</td>
-                <td>{entry.artist}</td>
-                <td>{entry.album}</td>
-                <td>{entry.release_date}</td>
-                <td>{entry.genre}</td>
+                <td>{song.title}</td>
+                <td>{song.artist}</td>
+                <td>{song.album}</td>
+                <td>{song.release_date}</td>
+                <td>{song.genre}</td>
               </tr>
             );
           })}
