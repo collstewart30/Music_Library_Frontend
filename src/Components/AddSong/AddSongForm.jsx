@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 
 const AddSongForm = (props) => {
@@ -9,17 +10,29 @@ const AddSongForm = (props) => {
     const [release_date, setRelease_Date] = useState('');
     const [genre, setGenre] = useState('');
 
+    let newSong = {
+        title: title,
+        artist: artist,
+        album: album,
+        release_date: release_date,
+        genre: genre
+    };
+
     function handleSubmit(event) {
         event.preventDefault();
-        let newSong = {
-            title: title,
-            artist: artist,
-            album: album,
-            release_date: release_date,
-            genre: genre
-        };
         console.log(newSong);
+        addNewSong(newSong);
         props.addNewSongProperty(newSong)
+    }
+
+    async function addNewSong(newSong){
+        const responseAdd = await axios.post('http://127.0.0.1:8000/api/music/', newSong)
+        // let tempSongs = [ ...songs, song];
+        props.addNewSongProperty(responseAdd);
+  
+        if(responseAdd.status == 204){
+          console.log('Successfully added a new song!');
+        }
     }
 
     return ( 

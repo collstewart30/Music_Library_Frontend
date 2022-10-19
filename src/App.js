@@ -8,27 +8,22 @@ function App() {
   const [songs, setSongs] = useState([]);
 
   // {title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'}
-  
+
    useEffect(() =>{
      getAllSongs();
    }, []);
 
    async function getAllSongs(){
-     const response = await axios.get('http://127.0.0.1:8000/api/music/');
-     console.log(response.data);
-     setSongs(response.data)
+     const responseGet = await axios.get('http://127.0.0.1:8000/api/music/');
+     console.log(responseGet.data);
+     setSongs(responseGet.data)
   }
-
-    function addNewSong(song){
-      let tempSongs = [ ...songs, song];
-      setSongs(tempSongs);
-    }
   
-  // {<button type='submit' onClick={() => getAllSongs()}>Get All Songs</button>}
+
   return (
     <div>
       <DisplayMusic parentSongs={songs}/>
-      <AddSongForm addNewSongProperty={addNewSong}/>
+      <AddSongForm addNewSongProperty={setSongs}/>
     </div>
   );
 }
