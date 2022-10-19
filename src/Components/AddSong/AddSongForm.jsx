@@ -19,6 +19,7 @@ const AddSongForm = (props) => {
             genre: genre
         };
         console.log(newSong);
+        props.addNewSongProperty(newSong)
     }
 
     return ( 

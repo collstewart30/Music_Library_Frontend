@@ -5,8 +5,10 @@ import AddSongForm from './Components/AddSong/AddSongForm';
 
 function App() {
 
-  const [songs, setSongs] = useState([{title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'}]);
+  const [songs, setSongs] = useState([]);
 
+  // {title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'}
+  
    useEffect(() =>{
      getAllSongs();
    }, []);
@@ -16,12 +18,17 @@ function App() {
      console.log(response.data);
      setSongs(response.data)
   }
+
+    function addNewSong(song){
+      let tempSongs = [ ...songs, song];
+      setSongs(tempSongs);
+    }
   
   // {<button type='submit' onClick={() => getAllSongs()}>Get All Songs</button>}
   return (
     <div>
       <DisplayMusic parentSongs={songs}/>
-      <AddSongForm />
+      <AddSongForm addNewSongProperty={addNewSong}/>
     </div>
   );
 }
