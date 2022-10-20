@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import AddSongForm from './Components/AddSong/AddSongForm';
+import SearchBar from './Components/SearchBar/SearchBar';
 
 function App() {
 
   const [songs, setSongs] = useState([]);
 
-  // {title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'}
+    // {title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'}
 
   useEffect(() =>{
     getAllSongs();
@@ -23,6 +24,7 @@ function App() {
     <div>
       <DisplayMusic parentSongs={songs}/>
       <AddSongForm addNewSongProperty={setSongs}/>
+      <SearchBar />
       {/* <DeleteSong /> */}
     </div>
   );

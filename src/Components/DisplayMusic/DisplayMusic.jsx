@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
 
 const DisplayMusic = (props) => {
     
-    function DeleteSong(){
+    // function DeleteSong(){
 
-        useEffect(() =>{
-            const responseDelete = await axios.delete('http://127.0.0.1:8000/api/music/');
-        }, []);
-        return (
-
-        );
-    }
+    //     useEffect(async() =>{
+    //         const responseDelete = await axios.delete('http://127.0.0.1:8000/api/music/');
+    //     }, []);
+        
+    // }
     
     return ( 
         <table>
@@ -35,9 +33,9 @@ const DisplayMusic = (props) => {
                     <td>{song.album}</td>
                     <td>{song.release_date}</td>
                     <td>{song.genre}</td>
-                    <td>
+                    {/* <td>
                         <button type='submit' onClick={DeleteSong}>Delete Song</button>
-                    </td>
+                    </td> */}
                 </tr>
                 );  
             })}
