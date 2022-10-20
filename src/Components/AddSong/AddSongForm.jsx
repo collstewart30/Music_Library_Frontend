@@ -20,7 +20,7 @@ const AddSongForm = (props) => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(newSong);
+        // console.log(newSong);
         addNewSong(newSong);
         props.addNewSongProperty(newSong)
     }
