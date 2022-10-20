@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
@@ -28,7 +28,7 @@ const AddSongForm = (props) => {
     async function addNewSong(newSong){
         const responseAdd = await axios.post('http://127.0.0.1:8000/api/music/', newSong)
         // let tempSongs = [ ...songs, song];
-        props.addNewSongProperty(responseAdd);
+        props.addNewSongPropertyNew (responseAdd);
   
         if(responseAdd.status == 204){
           console.log('Successfully added a new song!');

@@ -9,21 +9,21 @@ function App() {
 
   // {title: 'So Much To Say', artist: 'Dave Matthews Band', album: 'Crash', release_date: '1996-04-30', genre: 'Rock'}
 
-   useEffect(() =>{
-     getAllSongs();
-   }, []);
+  useEffect(() =>{
+    getAllSongs();
+  }, []);
 
-   async function getAllSongs(){
-     const responseGet = await axios.get('http://127.0.0.1:8000/api/music/');
-     console.log(responseGet.data);
-     setSongs(responseGet.data)
-  }
-  
+  async function getAllSongs(){
+    const responseGet = await axios.get('http://127.0.0.1:8000/api/music/');
+    console.log(responseGet.data);
+    setSongs(responseGet.data)
+ }  
 
   return (
     <div>
       <DisplayMusic parentSongs={songs}/>
       <AddSongForm addNewSongProperty={setSongs}/>
+      {/* <DeleteSong /> */}
     </div>
   );
 }
