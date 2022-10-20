@@ -1,27 +1,19 @@
 // be able to filter the table of music by album, artist, genre, release date, and title
 // create a form with one input - this is where the user will type term they will search by
 // once the form is submitted the value the user entered should be passed to a function on the app component that then filters the songs by 
-// that term depending on if that term matces and of the song's properties
+// that term depending on if that term mathces any of the song's properties
 
 import { useState } from "react";
 
 
-// form
-// input
-// .map() and .filter()
-
-
-
-
-
 const SearchBar = (props) => {
     
-    const [search, setSearch] = useState();
+    const [search, setSearch] = useState('');
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log('search bar console logging')
-        props.searchBarParent(search)
+        console.log('search bar console log');
+        props.searchBarParent(search);
     }
     
     return ( 

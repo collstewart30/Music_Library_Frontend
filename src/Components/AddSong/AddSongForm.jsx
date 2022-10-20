@@ -29,10 +29,6 @@ const AddSongForm = (props) => {
         const responseAdd = await axios.post('http://127.0.0.1:8000/api/music/', newSong)
         // let tempSongs = [ ...songs, song];
         props.addNewSongPropertyNew (responseAdd);
-  
-        if(responseAdd.status == 204){
-          console.log('Successfully added a new song!');
-        }
     }
 
     return ( 

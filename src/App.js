@@ -16,15 +16,21 @@ function App() {
 
   async function getAllSongs(){
     const responseGet = await axios.get('http://127.0.0.1:8000/api/music/');
-    console.log(responseGet.data);
+    // console.log(responseGet.data);
     setSongs(responseGet.data)
  }  
+
+ function searchBar(songs){
+    const searchBarEntry = songs.filter(function(song){
+      if(song.title.includes())
+    })
+ }
 
   return (
     <div>
       <DisplayMusic parentSongs={songs}/>
       <AddSongForm addNewSongProperty={setSongs}/>
-      <SearchBar />
+      <SearchBar searchBarParent={searchBar}/>
       {/* <DeleteSong /> */}
     </div>
   );
