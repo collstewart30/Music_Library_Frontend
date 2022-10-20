@@ -21,7 +21,9 @@ function App() {
  }  
 
  function searchBar(songs){
-    const searchBarEntry = songs.filter(function(song){
+  // does <SearchBar searchBarParent={searchBar}/> go here or below
+  // how to get the value searched from SearchBar to use as input for filtering
+  const searchBarEntry = songs.filter(function(song){
       if(song.title.includes())
     })
  }

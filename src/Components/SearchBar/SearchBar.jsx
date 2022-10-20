@@ -14,6 +14,7 @@ const SearchBar = (props) => {
         event.preventDefault();
         console.log('search bar console log');
         props.searchBarParent(search);
+        // value should be passed to a function on the app component that filters the songs by the term depending on if that term matches any of the song's properties
     }
     
     return ( 
