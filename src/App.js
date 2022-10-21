@@ -20,18 +20,16 @@ function App() {
     setSongs(responseGet.data)
  }  
 
- function searchBar(songs){
-  // instantiate <SearchBar searchBarParent={searchBar}/> here or below
-  // how to get the value input from SearchBar to use as input for filtering
-  
-  // let userInput = take in search value here?
-  
-  const searchBarEntry = songs.filter(function(song){
-      if(song[userInput].includes(search))
+ function searchBar(searchTerm){
+ 
+  let filteredSongs = songs.filter(function(song){
+      if(song.title.includes(searchTerm) || song.artist.includes(searchTerm) || song.album.includes(searchTerm) || song.release_date.includes(searchTerm) || song.genre.includes(searchTerm)){
+      return true
+      }
     }
-    
-    )
- };
+  )
+    setSongs(filteredSongs)    
+ }
 
   return (
     <div>
