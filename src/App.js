@@ -28,8 +28,10 @@ function App() {
   
   const searchBarEntry = songs.filter(function(song){
       if(song[userInput].includes(search))
-    })
- }
+    }
+    
+    )
+ };
 
   return (
     <div>
