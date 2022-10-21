@@ -3,6 +3,7 @@ import axios from 'axios';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic';
 import AddSongForm from './Components/AddSong/AddSongForm';
 import SearchBar from './Components/SearchBar/SearchBar';
+import './App.css';
 
 function App() {
 
@@ -32,11 +33,21 @@ function App() {
  }
 
   return (
-    <div>
-      <DisplayMusic parentSongs={songs}/>
-      <AddSongForm addNewSongProperty={setSongs}/>
-      <SearchBar searchBarParent={searchBar}/>
-      {/* <DeleteSong /> */}
+    <div className='container'>
+      <h1 className='border-box text-center p-3 mb-2 bg-secondary text-white' style={{'margin-bottom':'1em'}}>COLLEEN'S MUSIC LIBRARY</h1>
+      <div className='row border-box text-muted'>
+        <h3>SEARCH LIBRARY</h3>
+        <SearchBar searchBarParent={searchBar}/>
+      </div>
+      <div className='row border-box text-muted'>
+        <h3>ALL SONGS</h3>
+        <DisplayMusic parentSongs={songs}/>
+      </div>
+      <div className='row border-box text-muted'>
+        <h3>ADD SONG</h3>
+        <AddSongForm addNewSongProperty={setSongs}/>
+      </div>
+        {/* <DeleteSong /> */}
     </div>
   );
 }
