@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1 className='border-box text-center p-3 mb-2 bg-secondary text-white' style={{'margin-bottom':'1em'}}>COLLEEN'S MUSIC LIBRARY</h1>
+      <h1 className='border-box text-center p-3 mb-2 bg-secondary text-white' style={{'marginBottom':'1em'}}>COLLEEN'S MUSIC LIBRARY</h1>
       <div className='row border-box text-muted'>
         <h3>SEARCH LIBRARY</h3>
         <SearchBar searchBarParent={searchBar}/>

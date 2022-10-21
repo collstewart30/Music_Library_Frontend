@@ -44,7 +44,7 @@ const AddSongForm = (props) => {
                 <input type='date' className='form-control' value={release_date} onChange={(event) => setRelease_Date(event.target.value)}/>
                 <label>Genre</label>
                 <input type='text' className='form-control' value={genre} onChange={(event) => setGenre(event.target.value)}/>
-                <button type='submit' className='btn btn-primary' style={{'margin-top':'1em'}}>Add Song</button>
+                <button type='submit' className='btn btn-primary' style={{'marginTop':'1em'}}>Add Song</button>
             </div>
         </form>
      );
