@@ -1,6 +1,6 @@
 
 
-const DisplayMusic = (props) => {
+const DisplayMusic = (props) => {                           // destructuring data: ({songs}) instead of props
     
     return ( 
         <table className='table'>
@@ -15,7 +15,7 @@ const DisplayMusic = (props) => {
             </tr>
             </thead>
             <tbody>
-            {props.parentSongs.map((song,index) => {
+            {props.parentSongs.map((song,index) => {        // destructuring data: {songs.map((song) =>....rest of table)} then don't need "props."
                 return (
                     <tr>
                         {/* <td>{index + 1}</td> */}

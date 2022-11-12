@@ -22,13 +22,14 @@ const AddSongForm = (props) => {
         event.preventDefault();
         // console.log(newSong);
         addNewSong(newSong);
-        props.addNewSongProperty(newSong)
+        props.getAllSongs();
     }
 
     async function addNewSong(newSong){
         const responseAdd = await axios.post('http://127.0.0.1:8000/api/music/', newSong)
         // let tempSongs = [ ...songs, song];
-        props.addNewSongPropertyNew (responseAdd);
+        // props.addNewSongPropertyNew (responseAdd);
+        console.log("New Song: ", responseAdd)
     }
 
     return ( 

@@ -32,6 +32,8 @@ function App() {
     setSongs(filteredSongs)    
  }
 
+ // destructuring data: <DisplayMusic songs={songs}>
+
   return (
     <div className='container'>
       <h1 className='border-box text-center p-3 mb-2 bg-secondary text-white' style={{'marginBottom':'1em'}}>COLLEEN'S MUSIC LIBRARY</h1>
@@ -41,11 +43,11 @@ function App() {
       </div>
       <div className='row border-box text-muted'>
         <h3>ALL SONGS</h3>
-        <DisplayMusic parentSongs={songs}/>
+        <DisplayMusic parentSongs={songs}/>   
       </div>
       <div className='row border-box text-muted'>
         <h3>ADD SONG</h3>
-        <AddSongForm addNewSongProperty={setSongs}/>
+        <AddSongForm addNewSongProperty={setSongs} getAllSongs={getAllSongs}/>
       </div>
         {/* <DeleteSong /> */}
     </div>
